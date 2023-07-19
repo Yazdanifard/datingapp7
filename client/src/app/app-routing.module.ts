@@ -12,8 +12,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  {
-    path: '',
+  { path: '',
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
@@ -27,10 +26,9 @@ const routes: Routes = [
       { path: 'messages', component: MessagesComponent },
     ],
   },
-
+  {path: 'errors', component:TestErrorComponent },
   {path: 'not-found', component:NotFoundComponent },
   {path: 'server-error', component:ServerErrorComponent },
-  {path: 'errors', component:TestErrorComponent },
   { path: '**', component: NotFoundComponent, pathMatch: 'full' },
 ];
 
